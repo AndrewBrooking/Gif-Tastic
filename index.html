@@ -1,47 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-100 h-100">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Giftastic</title>
+    <title>Gif-tastic</title>
 
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Local CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
 
-    <!-- TODO: Main content area -->
+</head>
+
+<body class="w-100 h-100 text-white">
+
+    <!-- Page content -->
+    <div class="container-fluid h-100 px-0">
+
+        <!-- Page title -->
+        <div class="row mb-0 jumbotron jumbotron-fluid text-left border-bottom border-secondary">
+            <span class="col text-left display-4 my-0 py-0 mx-3">Gif-tastic</span>
+        </div>
+
+        <div class="row d-flex h-100">
+
+            <!-- Search and buttons -->
+            <div class="btn-toolbar col-md-12 col-lg-3 col-xl-2 h-100 mx-3 px-auto py-3 border-right border-secondary" role="toolbar">
+
+                <!-- Search bar -->
+                <div class="input-group mx-auto">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="btn-group-vertical btn-group-lg mx-auto py-3" role="group" id="btn-div">
+                    <button class="btn btn-primary" type="button">Test 1</button>
+                    <button class="btn btn-primary" type="button">Test 2</button>
+                    <button class="btn btn-primary" type="button">Test 3</button>
+                </div>
+            </div>
+
+            <!-- Images -->
+            <div class="col h-100" id="image-div"></div>
+        </div>
+    </div>
+
+    <!---------------------- Script imports ---------------------->
 
     <!-- jQuery -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
 
     <!-- Popper -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
 
     <!-- Bootstrap JS -->
-    <script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <!-- Masonry -->
@@ -49,6 +85,7 @@
 
     <!-- App JS -->
     <script src="./assets/javascript/app.js"></script>
-    
+
 </body>
+
 </html>
