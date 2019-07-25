@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="w-100 h-100">
+<html lang="en">
 
 <head>
 
@@ -12,37 +12,36 @@
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Bootswatch CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 
     <!-- Local CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
-<body class="w-100 h-100 text-white">
+<body class="w-100 h-100">
 
     <!-- Page content -->
-    <div class="container-fluid h-100 px-0">
+    <div class="container-fluid">
 
         <!-- Page title -->
-        <div class="row mb-0 jumbotron jumbotron-fluid text-left border-bottom border-secondary">
-            <span class="col text-left display-4 my-0 py-0 mx-3">Gif-tastic</span>
+        <div class="row jumbotron jumbotron-fluid mb-1 border-bottom border-secondary">
+            <span class="w-75 text-left display-4 mx-auto px-4">Gif-tastic</span>
         </div>
 
-        <div class="row d-flex h-100">
+        <div class="row w-75 h-100 mx-auto">
 
             <!-- Search and buttons -->
-            <div class="btn-toolbar col-md-12 col-lg-3 col-xl-2 h-100 mx-3 px-auto py-3 border-right border-secondary" role="toolbar">
+            <div class="btn-toolbar col-md-12 col-lg-4 col-xl-3 py-3" role="toolbar">
 
                 <!-- Search bar -->
                 <div class="input-group mx-auto">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" class="form-control" placeholder="Search" id="search">
                     <div class="input-group-append">
                         <button class="btn btn-secondary" type="button" id="search-btn">
                             <i class="fas fa-search"></i>
@@ -51,15 +50,45 @@
                 </div>
 
                 <!-- Buttons -->
-                <div class="btn-group-vertical btn-group-lg mx-auto py-3" role="group" id="btn-div">
-                    <button class="btn btn-primary" type="button">Test 1</button>
-                    <button class="btn btn-primary" type="button">Test 2</button>
-                    <button class="btn btn-primary" type="button">Test 3</button>
+                <div class="btn-group-vertical btn-group-lg w-75 my-4 mx-auto" role="group" id="btn-div">
+                    <button class="btn btn-primary w-100" type="button" value="test1">Test 1</button>
+                    <button class="btn btn-primary w-100" type="button" value="test2">Test 2</button>
+                    <button class="btn btn-primary w-100" type="button" value="test3">Test 3</button>
                 </div>
             </div>
 
-            <!-- Images -->
-            <div class="col h-100" id="image-div"></div>
+            <!-- Results -->
+            <div class="col my-3">
+
+                <!-- Page nav -->
+                <nav>
+                    <ul class="nav pagination float-right">
+
+                        <!-- Previous page -->
+                        <li class="page-item disabled" value="prev">
+                            <a class="page-link" href="#">&laquo;</a>
+                        </li>
+
+                        <!-- First page -->
+                        <li class="page-item active" value="1">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+
+                        <!-- Next page -->
+                        <li class="page-item disabled" value="next">
+                            <a class="page-link" href="#">&raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Images -->
+                <div class="card h-100 mt-5 border border-secondary">
+                    <div class="card-body text-center" id="result">
+                        <!-- Results of search will populate here -->
+                        <span class="text-muted h6">Press a button or search a phrase</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

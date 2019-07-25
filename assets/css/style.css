@@ -1,9 +1,4 @@
-body {
-    background: rgb(22, 22, 22);
-}
-
 .jumbotron {
-    background: transparent;
     height: 2rem;
     padding-top: 2rem;
 }
@@ -13,7 +8,7 @@ body {
 }
 
 .has-search .form-control-feedback {
-    position: absolute;
+    position: relative;
     z-index: 2;
     display: block;
     width: 2.375rem;
@@ -21,11 +16,15 @@ body {
     line-height: 2.375rem;
     text-align: center;
     pointer-events: none;
-    color: #aaa;
+}
+
+.input-group {
+    max-height: 42px;
 }
 
 .input-group-append {
     display: block;
+    max-height: 42px;
 }
 
 button {
