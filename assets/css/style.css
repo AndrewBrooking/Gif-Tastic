@@ -30,3 +30,15 @@
 button {
     max-height: 40px;
 }
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+.grid-item {
+    float: left;
+    width: 25%;
+}
