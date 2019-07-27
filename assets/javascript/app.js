@@ -16,9 +16,8 @@ $(document).ready(function () {
     // Initialize Masonry
     let grid = $(".grid").masonry({
         itemSelector: ".grid-item",
-        columnWidth: ".grid-sizer",
-        fitWidth: true,
-        percentPosition: true
+        columnWidth: 100,
+        fitWidth: true
     });
 
     // Show default buttons when page has loaded
@@ -28,7 +27,7 @@ $(document).ready(function () {
     $(document).on("click", "button", buttonClick);
 
     // Handle image hover events
-    $(document).on("hover", "img", imgHover);
+    $(document).on("click", "img", imgClick);
 
     // Create a query URL with a search term
     function generateQueryURL(term) {
@@ -104,24 +103,30 @@ $(document).ready(function () {
         grid.masonry().empty();
 
         // Adds a masonry sizing div
-        let sizer = $("<div>").addClass(".grid-sizer");
-        appendMasonryItem(sizer);
+        // let sizer = $("<div>").addClass(".grid-sizer");
+        // appendMasonryItem(sizer);
 
         // Add all images to the page
         for (let i = 0; i < response.data.length; i++) {
             let data = response.data[i];
             newImage(
                 data.title,
-                data.images.downsized_still.url,
-                data.images.downsized.url
+                data.images.original_still.url,
+                data.images.original.url,
+                data.images.original.width,
+                data.images.original.height,
+                data.rating
             );
         }
     }
 
     // Add a new gif to the page
-    function newImage(alt, still, animated) {
+    function newImage(alt, still, animated, w, h, rating) {
         // Create div to store img
-        let item = $("<div>").addClass("grid-item");
+        let item = $("<div>")
+            .addClass("grid-item mx-auto text-center")
+            .css("width", w / 1.5)
+            .css("height", h / 1.5);
 
         // Create img with still and animated data values
         let img = $("<img>")
@@ -129,15 +134,30 @@ $(document).ready(function () {
             .attr("alt", alt)
             .attr("data-still", still)
             .attr("data-animated", animated)
-            .attr("data-status", "still");
+            .attr("data-status", "still")
+            .css("width", w / 1.5)
+            .css("height", h / 1.5);
+
+        let span = $("<span>")
+            .addClass("h6")
+            .text("Rating: " + rating);
 
         // Add item to the results div
         item.append(img);
+        item.append(span);
         appendMasonryItem(item);
     }
 
-    function imgHover() {
-        // TODO
+    function imgClick() {
+        let status = $(this).attr("data-status");
+        let still = $(this).attr("data-still");
+        let animated = $(this).attr("data-animated");
+
+        if (status === "still") {
+            $(this).attr("src", animated).attr("data-status", "animated");
+        } else if (status === "animated") {
+            $(this).attr("src", still).attr("data-status", "still");
+        }
     }
 
     function appendMasonryItem(item) {
